@@ -1,0 +1,28 @@
+/*
+    --------------
+    FONTS
+    --------------
+
+    Destinated file for setting up fonts
+*/
+
+
+// FONT FAMILY
+
+/*@font-face {
+    font-family: 'FONT NAME';
+    src: url('fonts/lato-bol-webfont.eot');
+    src: url('fonts/lato-bol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/lato-bol-webfont.woff2') format('woff2'),
+         url('fonts/lato-bol-webfont.woff') format('woff'),
+         url('fonts/lato-bol-webfont.ttf') format('truetype'),
+         url('fonts/lato-bol-webfont.svg#latobold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}*/
+
+
+// MIXIN DE FONTE - uso: @include font-FONT-NAME;
+// @mixin font-FONT-NAME {
+//   font-family: 'FONT NAME', Arial, Tahoma, sans-serif;
+// }

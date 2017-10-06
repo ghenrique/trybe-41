@@ -1,0 +1,58 @@
+.hero {
+    height: 500px;
+    background: url('../images/hero-banner.jpg') center no-repeat;
+    background-size: cover;
+
+    &__content {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        
+        width: 100%;
+        text-align: center;
+        
+        transform: translateY( -50%);
+    } // &__content
+
+    &__title {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: colors( white );
+    } // &__title
+
+    .wrapper {
+        position: relative;
+        height: 100%;
+    } // .wrapper
+
+    @include breakpoint( dog ) {
+        
+        &__title {
+            margin-bottom: 40px;
+            font-size: 40px;
+        } // &__title
+
+    } // @include breakpoint( dog )
+
+    @include breakpoint( horse ) {
+        
+        height: 600px;
+
+        &__content {
+            max-width: 400px;
+            text-align: left;
+        } // &__content
+
+        &__title {
+            font-size: 64px;
+        } // &__title
+
+    } // @include breakpoint( horse )
+
+    @include breakpoint( elephant ) {
+        height: 768px;
+    } // @include breakpoint( elephant )
+
+} // .hero

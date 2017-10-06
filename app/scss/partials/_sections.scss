@@ -1,0 +1,30 @@
+// Section About
+.about {
+    margin-bottom: 15px;
+    padding: 50px 0;
+    background-color: colors( red );
+
+    &__description {
+        font-size: rem(16px);
+        color: colors( white );
+        line-height: 2;
+    } // &__text
+
+    @include breakpoint( dog ) {
+
+        &__description {
+            max-width: 75%;
+            font-size: rem(18px);
+        } // &__description
+
+    } // @include breakpoint( dog )
+
+    @include breakpoint( horse ) {
+        padding: 100px 0;
+
+        &__description {
+            font-size: rem(25px);
+        } // &__text
+    } // @include breakpoint( horse )
+
+} // .about

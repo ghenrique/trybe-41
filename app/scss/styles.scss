@@ -1,0 +1,52 @@
+/*
+    ORDEM DE PROPRIEDADES
+
+    seletor {
+        1. position:;
+        2. top:;
+        3. left:;
+        4. float:;
+        5. clear:;
+        6. display:;
+        7. width:;
+        8. height:;
+        9. margin:;
+        10. padding:;
+        11. border:;
+        12. background:;
+        13. font:;
+        14. text:;
+        15. color:;
+        16. demais unidades;
+    }
+
+
+    1 até 3 POSICIONAMENTO
+    4 até 5 FLOAT
+    6 COMPORTAMENTO
+    7 até 10  MEDIDAS E ESPAÇAMENTOS
+    11 até 12 FORMATAÇÃO DO BLOCO
+    13 até 15 FORMATAÇÃO DO CONTEÚDO
+*/
+
+
+@charset "utf-8";
+
+/* Reset, Mixins, Vars */
+@import "general/reset";
+@import "general/fonts";
+@import "general/helpers_mixins";
+@import "general/variables";
+
+/* Structure */
+@import "general/layouts";
+
+/* Partials */
+@import "partials/buttons";
+@import "partials/header";
+@import "partials/hero";
+@import "partials/sections";
+
+/* Print */
+@import "general/print";
+

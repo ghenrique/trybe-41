@@ -1,0 +1,60 @@
+/*
+    --------------
+    VARIABLES
+    --------------
+
+    Specific file for variables and constants declarations
+*/
+
+
+// COLOR PALETTE
+
+$colors: (
+    white: (
+        base: #ffffff
+    ),
+
+    black: (
+        base: #000000
+    ),
+
+    grey: (
+        x-dark   : #414042,
+        dark     : #808285,
+        mid-dark : #b9babd,
+        base     : #dddddd,
+        mid-light: #e5e5e5
+    ),
+
+    red: (
+        base: #be003e
+    ),
+
+    green: (
+        base: #009993
+    ),
+
+    yellow: (
+        base: #fbb900
+    )
+);
+
+@function colors( $cor, $tonalidade: 'base' ) {
+    @return map-get( map-get( $colors, $cor ), $tonalidade );
+}
+
+
+// BASE COLORS
+$text-color: colors( black ); // textos de conteúdo
+$body-color: colors( white ); // cor do fundo do site
+
+
+
+// MEASURES AND WEIGHTS
+$container: 1200px;
+$gutter     : 20px;
+
+$font-light    : 300;
+$font-normal   : 400;
+$font-semi-bold: 600;
+$font-bold     : 700;

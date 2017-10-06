@@ -1,0 +1,55 @@
+/*
+    --------------
+    LAYOUTS
+    --------------
+
+    Declaring standard blocks from all the site such as titles, text formatting, grids, etc.
+*/
+
+
+// STANDARDS
+html {
+    font-family: 'Open Sans', sans-serif;
+    background-color: $body-color;
+    color: $text-color;
+}
+
+body {
+    @include font-size(14px);
+}
+
+
+
+// TIPOGRAPHY
+h1,h2,h3,h4,h5,h6 {
+    // @include font-FONT-NAME;
+}
+
+
+p {
+    margin: 0 0 $gutter;
+}
+
+
+
+// lINKS
+a {
+    color: $text-color;
+}
+
+
+
+
+/* ------- WRAPPER - Grid ------- */
+.wrapper {
+    @include clearfix; // _helpers_mixins.scss
+    max-width: $container;
+    margin: 0 auto;
+    padding: 0 $gutter;
+}
+
+
+
+
+
+

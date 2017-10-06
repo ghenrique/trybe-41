@@ -1,0 +1,25 @@
+/*
+    --------------
+    BUTTONS
+    --------------
+
+    Declaring standard button and CTA styles
+*/
+
+
+.cta {
+    transition: all .4s ease-in-out;
+    
+    padding: 10px 40px;
+    background-color: colors( red );
+
+    font-size: rem(20px);
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: colors( white );
+
+    &:hover {
+        background-color: #a00034;
+    }
+} // .cta

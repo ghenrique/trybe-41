@@ -1,0 +1,112 @@
+.header {
+    @include clearfix;
+    
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    padding: 25px 0;
+
+    z-index: 2;
+
+    &__logotype {
+        width: 128px;
+        height: 50px;
+        
+        margin: 0 auto;
+        
+        background: url('../images/logo-trybe-white.png') 0 0 no-repeat;
+        background-size: 100%;
+
+        font: 0/0 a;
+    } // &__logo
+
+    &__nav {
+        margin-top: 20px;
+    }
+
+    &__item {
+        display: inline-block;
+
+        width: 32%;
+
+        text-align: center;
+        list-style: none;
+        
+        a {
+            font-size: rem(16px);
+            text-decoration: none;
+            text-transform: uppercase;
+            color: colors( white );
+        } // a
+
+    } // &__item
+
+
+    @include breakpoint( dog ) {
+        
+        &__logo {
+            float: left;
+        } // &__logo
+
+        &__nav {
+            float: right;
+            margin-top: 12px;
+        } // &__nav
+
+
+        &__item {
+            width: auto;
+            margin-right: 40px;
+
+            a {
+                font-size: rem(20px);
+            }
+
+            &.active {
+                
+                a {
+                    font-weight: 800;
+                } // a
+
+            } // &.active
+
+            &:last-child {
+                margin-right: 0;
+            } // &:last-child
+        }
+
+    } // @include breakpoint( dog )
+
+    @include breakpoint( horse ) {
+
+        &__item {
+            position: relative;
+
+            &:after {
+                transition: all .4s ease-in-out;
+
+                content: '';
+
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+
+                width: 0;
+                height: 2px;
+
+                background-color: colors( red );
+            } // &:after
+
+            &:hover {
+                &:after {
+                    left: 0;
+                    width: 100%;
+                } // &:after
+            }
+
+        }
+
+    }
+
+} // .header
