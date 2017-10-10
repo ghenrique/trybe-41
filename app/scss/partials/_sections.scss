@@ -28,3 +28,110 @@
     } // @include breakpoint( horse )
 
 } // .about
+
+
+
+// Content Sections
+.content-section {
+    height: 400px;
+    margin-bottom: 15px;
+
+    &.connect {
+        background: url('../images/section-connect-bg.jpg') center no-repeat;
+        background-size: cover;
+    } // &.connect
+
+    &.content {
+        background: url('../images/section-content-bg.jpg') center no-repeat;
+        background-size: cover;
+    } // &.connect
+
+    &.interaction {
+        background: url('../images/section-interaction-bg.jpg') center no-repeat;
+        background-size: cover;
+    } // &.connect
+
+    .wrapper {
+        position: relative;
+        height: 100%;
+    } // .wrapper
+
+    &__content {
+        position: absolute;
+        top:  50%;
+        left: 0;
+
+        max-width: 500px;
+
+        transform: translateY( -50% );
+
+        text-align: center;
+
+        .content-section__simbol {
+            margin-bottom: 40px;
+        } // .content-section__simbol
+
+        p {
+            margin-bottom: 30px;
+            font-size: rem(14px);
+            color: colors( white );
+
+            &:last-child {
+                margin-bottom: 0;
+            } // &:last-child
+
+            a {
+                transition: all .4s ease-in-out;
+
+                font-weight: 800;
+                text-decoration: none;
+                color: colors( white );
+
+                &:hover {
+                    color: colors( red );
+                } // :hover
+
+            } // a
+
+        } // p
+
+
+        @include breakpoint( dog ) {
+            left: 50%;
+            transform: translate( -50%, -50% );
+        } // @include breakpoint( dog )
+
+        @include breakpoint( horse ) {
+            width: 50%;
+            text-align: left;
+
+            transform: translateY( -50% );
+
+            .content-left & {
+                left: 20px;
+            } // .content-left &
+
+            .content-right & {
+                right: 20px;
+            } // .content-right &
+
+            p {
+                font-size: rem(20px);
+            } // p
+
+        } // @include breakpoint( horse )
+
+    } // &__content
+
+    @include breakpoint( horse ) {
+        height: 650px;
+
+        &.connect,
+        &.content,
+        &.interaction {
+            background-size: auto;
+            background-attachment: fixed;
+        } // .connect
+    } // @include breakpoint( horse )
+
+} // .content-section

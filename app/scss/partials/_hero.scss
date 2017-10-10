@@ -28,6 +28,10 @@
     } // .wrapper
 
     @include breakpoint( dog ) {
+
+        &__content {
+            left: 20px;
+        } // &__content
         
         &__title {
             margin-bottom: 40px;
@@ -41,6 +45,7 @@
         height: 600px;
 
         &__content {
+            left: 0;
             max-width: 400px;
             text-align: left;
         } // &__content
