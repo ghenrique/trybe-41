@@ -15,6 +15,7 @@
     } // &__content
 
     &__image {
+        position: relative;
         
         img {
             position: absolute;
@@ -29,11 +30,37 @@
 
     &__title {
         margin-bottom: 30px;
-        font-size: 30px;
+
+        font-size: rem(30px);
         font-weight: 800;
         text-transform: uppercase;
         color: colors( white );
+
+        line-height: 1.09;
     } // &__title
+
+
+    &__description {
+        font-size: rem(16px);
+        color: colors( white );
+    } // __description
+
+    &__more-content {
+        position: absolute;
+        left:    50%;
+        bottom: 35px;
+
+        display: block;
+
+        width:  30px;
+        height: 30px;
+        margin-left: -15px;
+
+        border-bottom: 1px solid colors( white );
+          border-left: 1px solid colors( white );
+
+        transform: rotate( -45deg );
+    }
 
     .wrapper {
         position: relative;
@@ -63,7 +90,6 @@
     } // @include breakpoint( dog )
 
     @include breakpoint( horse ) {
-        
         height: 600px;
 
         &__image {
@@ -78,19 +104,27 @@
         } // &__image
 
         &__content {
-            left: 0;
-            max-width: 400px;
+            left: 20px;
+            max-width: 450px;
             text-align: left;
         } // &__content
 
         &__title {
-            font-size: 64px;
+            font-size: rem(64px);
         } // &__title
+
+        &__description {
+            font-size: rem(20px);
+        } // __description
 
     } // @include breakpoint( horse )
 
     @include breakpoint( elephant ) {
         height: 768px;
+
+        &__content {
+            left: 20px;
+        } // &__content
     } // @include breakpoint( elephant )
 
 } // .hero

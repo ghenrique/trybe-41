@@ -135,3 +135,151 @@
     } // @include breakpoint( horse )
 
 } // .content-section
+
+
+
+// Teachers Section
+.teachers {
+    padding: 40px 0;
+
+    &__item {
+        margin-bottom: 20px;
+        list-style: none;
+
+        a {
+            display: block;
+        } // a
+    } // &__item
+
+    &__photo {
+        position: relative;
+        height: 365px;
+        overflow: hidden;
+
+        &:after {
+            transition: all .6s ease-in-out;
+
+            content: '';
+            position: absolute;
+            left:   0;
+            right:  0;
+            bottom: 0;
+
+            height: 70%;
+
+            background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+            z-index: 2;
+        } // &:after
+
+        img {
+            transition: all .6s ease-in-out;
+
+            position: absolute;
+            top:  50%;
+            left: 50%;
+
+            min-width: 100%;
+
+            transform: translate( -50%, -50% ) scale3d(1, 1, 1);
+
+            z-index: -1;
+        } // img
+
+
+        figcaption {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+
+            padding: 0 20px;
+
+            z-index: 3;
+        } // figcaption
+
+    } // &__photo
+
+    &__name {
+        max-width: 170px;
+
+        font-size: rem(25px);
+        color: colors( white );
+        text-transform: uppercase;
+    } // &__name
+
+
+    &__see-more {
+        transition: all .4s ease-in-out;
+
+        position: absolute;
+        right: 20px;
+        bottom:   0;
+
+        font-size: rem(30px);
+        font-weight: bold;
+        color: colors( red );
+    } // &__see-more
+
+
+    @include breakpoint( dog ) {
+        
+        &__item {
+            display: inline-block;
+            width: 48%;
+            margin-right: 20px;
+
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+        } // &__item
+
+    } // @include breakpoint( dog )
+
+    @include breakpoint( horse ) {
+
+        &__see-more {
+            right: -20px;
+        } // &__see-more
+
+        &__photo {
+
+            &:hover {
+                &:after {
+                    height: 120%;
+                } // &:after
+
+                .teachers__see-more {
+                    right: 20px;
+                } // .teachers__see-more
+
+                img {
+                    transform: translate(-50%, -50%) scale3d(1.05, 1.05, 1.05);
+                } // img
+            } // &:hover
+
+        } // &__photo
+
+    }
+
+
+    @include breakpoint( elephant ) {
+        
+        &__item {
+            width: 31%;
+            margin-right:  35px;
+            margin-bottom: 35px;
+
+            &:nth-child(2n) {
+                margin-right: 35px;
+            }
+
+            &:nth-child(3n) {
+                margin-right: 0;
+            } // &:nth-child(3n)
+        } // &__item
+
+    }
+
+} // .teachers
