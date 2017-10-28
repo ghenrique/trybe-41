@@ -7,7 +7,12 @@ window.app = window.app || {};
 
     var $document = $(document),
         $window   = $(window),
-        $body     = $('body');
+        $body     = $('body'),
+        $selectorOpenModal = $('.js-openModal'),
+        $selectorCloseModal = $('.js-closeModal'),
+        $modal = $('.modal'),
+        modalActiveClass = 'modal--active',
+        bodyLock = 'body-lock';
 
 
 
@@ -17,6 +22,17 @@ window.app = window.app || {};
 
     $document.ready( function() {
         
+        $selectorOpenModal.on( 'click', function(e) {
+            e.preventDefault();
+            $modal.addClass(modalActiveClass);
+            $body.addClass( bodyLock );
+        });
+
+        $selectorCloseModal.on( 'click', function(e) {
+            e.preventDefault();
+            $modal.removeClass(modalActiveClass);
+            $body.removeClass( bodyLock );
+        });
 
     });
 

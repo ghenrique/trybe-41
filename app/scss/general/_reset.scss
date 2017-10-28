@@ -3,4 +3,6 @@ body, h1, h2, h3, h4, h5, h6, p, blockquote, pre, dl, dd, ol, ul, menu, form, fi
 article, aside, details, summary, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
 button, fieldset, iframe, img { border: 0; }
 input[type=search] { -webkit-appearance: textfield; }
+input[type="text"], input[type="tel"] { border-radius: 0; }
+input[type="submit"] { -webkit-appearance: none; }
 details summary::-webkit-details-marker { display: none; }

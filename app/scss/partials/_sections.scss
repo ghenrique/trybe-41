@@ -4,6 +4,24 @@
     padding: 50px 0;
     background-color: colors( red );
 
+    span {
+        display: block;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    } // span
+
+    &--teachers {
+        .about__description {
+            font-size: rem(14px);
+
+            span {
+                font-size: rem(18px);
+            } // span
+            
+        } // .about__description
+        
+    } // &--teachers
+
     &__description {
         font-size: rem(16px);
         color: colors( white );
@@ -11,6 +29,18 @@
     } // &__text
 
     @include breakpoint( dog ) {
+
+        &--teachers {
+            .about__description {
+                font-size: rem(14px);
+
+                span {
+                    font-size: rem(18px);
+                } // span
+                
+            } // .about__description
+            
+        } // &--teachers
 
         &__description {
             max-width: 75%;
@@ -21,6 +51,18 @@
 
     @include breakpoint( horse ) {
         padding: 100px 0;
+
+        &--teachers {
+            .about__description {
+                font-size: rem(16px);
+
+                span {
+                    font-size: rem(25px);
+                } // span
+                
+            } // .about__description
+
+        } // &--teachers
 
         &__description {
             font-size: rem(25px);
@@ -182,6 +224,7 @@
             left: 50%;
 
             min-width: 100%;
+            max-height: 100%;
 
             transform: translate( -50%, -50% ) scale3d(1, 1, 1);
 
@@ -283,3 +326,80 @@
     }
 
 } // .teachers
+
+
+// Pricing section
+.pricing {
+    padding: 50px 0;
+
+    &__item {
+        margin-bottom: 50px;
+
+        @include breakpoint( dog ) {
+            display: inline-block;
+            margin-right: -4px;
+            margin-bottom: 0;
+            vertical-align: top;
+        }
+    } // __item
+
+    &__cta {
+        display: block;
+        width: 100%;
+    } // &__cta
+
+    &__values {
+        @include breakpoint( dog ) {
+            width: 50%;
+        }
+    } // &__values
+
+    &__coffee {
+
+        &__title {
+            color: colors( red );
+            font-size: rem(20px);
+            font-weight: bold;
+            text-transform: uppercase;
+        } // &__title
+
+        @include breakpoint( dog ) {
+            width: 50%;
+
+            &__title {
+                font-size: rem(18px);
+            } // &__title
+        }
+
+        @include breakpoint( horse ) {
+            &__title {
+                font-size: rem(30px);
+            } // &__title
+        }
+
+    } // &__coffee
+
+    &__class-hour {
+        font-size: rem(30px);
+        font-weight: bold;
+        text-transform: uppercase;
+    } // &__class-hour
+
+    &__plan {
+        margin-bottom: 20px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        } // &:last-of-type
+
+        h2 {
+            margin-bottom: 15px;
+            color: colors(red );
+        } // h2
+
+        p {
+            margin: 0 0 10px;
+        } // p
+    } // __plan
+
+} // .pricing
