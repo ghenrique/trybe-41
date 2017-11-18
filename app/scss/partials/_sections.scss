@@ -403,3 +403,106 @@
     } // __plan
 
 } // .pricing
+
+
+// Spaces
+
+.spaces {
+    padding: 50px 0;
+
+    &__item {
+        margin-bottom: 50px;
+        list-style: none;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    } // &__item
+
+    &__img-container {
+        margin-bottom: 20px;
+        max-height: 260px;
+        overflow: hidden;
+        
+        img {
+            width: 100%;
+        } // img
+
+    } // &__img-container
+
+    &__caption {
+
+        .h2 {
+            margin-bottom: 20px;
+            color: colors( red );
+            text-transform: uppercase;
+            
+        } // .h2
+
+        p {
+            span {
+                display: block;
+            } // span
+        } // p
+
+        a {
+            transition: all .4s ease-in-out;
+            color: colors( red );
+
+            @include breakpoint( horse ) {
+
+                &:hover {
+                    color: colors( red, 'dark' );
+                } // &:hover
+
+            } // @include breakpoint( horse )
+
+        } // a
+
+    } // &__caption
+
+    @include breakpoint( dog ) {
+        
+        &__col {
+            display: inline-block;
+            
+            width: 50%;
+            margin-right: -4px;
+
+            vertical-align: top;
+
+            &:first-of-type {
+                padding-right: 20px;
+            }
+
+            &:last-of-type {
+                padding-left: 20px;
+            }
+        } // &__img-container, &__caption
+
+        &__img-container {
+            
+            img {
+                transition: all .4s ease-in-out;
+            }
+            
+            &:hover {
+                img {
+                    transform: scale( 1.05, 1.05 );
+                } // img
+            } // :hover
+        } // &__img-container
+
+    } // @include breakpoint( dog )
+
+    @include breakpoint( horse ) {
+
+        &__caption {
+            .h2 {
+                font-size: rem( 30px );
+            } // .h2
+        } // &__caption
+
+    } // @include breakpoint( horse )
+
+} // .spaces

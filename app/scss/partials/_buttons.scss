@@ -21,6 +21,6 @@
     color: colors( white );
 
     &:hover {
-        background-color: #a00034;
+        background-color: colors( red, 'dark' );
     }
 } // .cta
