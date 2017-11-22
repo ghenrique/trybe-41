@@ -1,8 +1,47 @@
+<?php
+	if ($_POST) {
+		// Variables
+		$professor = $_POST['professor'];
+	    $tipo_contato = $_POST['marcar-contato'];
+	    $nome = $_POST['nome'];
+	    $email = $_POST['email'];
+	    $telefone = $_POST['phone'];
+	    $data_preferencia = $_POST['date-time'];
+	    $local_preferencia = $_POST['place'];
+		
+		
+		// Sender
+	    $email_remetente = "contact@trybe41.com";
+	    
+		// E-mail configs
+	    $email_destinatario = "trybeconect@gmail.com"; // Receiver
+	    $email_reply = "$email"; 
+	    $email_assunto = "Agendamento de $tipo_contato com o professor $professor";
+	    
+	    // Message Body
+	    $email_conteudo = "Tipo de contato: $tipo_contato \n"; 
+	    $email_conteudo .= "Nome: $nome \n";
+	    $email_conteudo .= "E-mail: $email \n";
+	    $email_conteudo .= "Telefone: $telefone \n";
+	    $email_conteudo .= "Data/horário de preferência: $data_preferencia \n";
+	    $email_conteudo .= "Local/bairro de preferência: $local_preferencia \n";
+	    
+	    // Setting Headers 
+	    $email_headers = implode ( "\n",array ( "From: $email_remetente", "Reply-To: $email_reply", "Return-Path: $email_remetente","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ) );
+	    
+	    
+	    // Sending e-mail
+	    if (mail ($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
+			$send = true;
+	    }
+	}
+?>
+
 <DOCTYPE html5>
 <html class="no-js" lang="pt-br">
 	<head>
 		<meta charset="utf-8" />
-		<title>Mateus Laino | Professores</title>
+		<title>Eyshila Röper | Professores</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- Fonts -->
@@ -75,7 +114,7 @@
 				<!-- .hero__image -->
 				<figure class="hero__image">
 					
-					<img src="../dist/images/teachers/mateus-laino.jpg" alt="Conheça nossos professores">
+					<img src="../dist/images/teachers/eyshila-roper.jpg" alt="Conheça nossos professores">
 
 					<span class="hero__more-content"></span>
 
@@ -92,8 +131,8 @@
 				<div class="wrapper">
 					
 					<p class="about__description">
-						<span>Mateus Laino, Curitiba</span>
-						 Estudante de Administração de empresas, formado pelo St. Giles International (New York) em linguística e literatura americana. É professor há 3 anos e possui experiência em aulas para testes internacionais.
+						<span>Eyshila Röper, Curitiba</span>
+						É estudante de Psicologia e tem grande experiência como professora de inglês. Uma das suas maiores alegrias é estar em contato com as pessoas, podendo conhecer mais sobre seus gostos e costumes, o que à faz querer conhecer diferentes culturas dentro e fora do Brasil. Além disso, ela ama visitar cafés, parques... Ah, ela é apaixonada pelo maravilhoso mundo do cinema e séries, assim como música, moda e animais (principalmente catiorros).
 					</p>
 
 				</div>
@@ -110,7 +149,7 @@
 					
 					<!-- .pricing__values -->
 					<div class="pricing__item pricing__values">
-						<p class="pricing__class-hour">R$ 53,10 hora/aula</p>
+						<p class="pricing__class-hour">R$ 43,00 hora/aula</p>
 
 						<div class="pricing__plan">
 							<h2>Plano mensal</h2>
@@ -119,7 +158,7 @@
 						</div>
 
 						<div class="pricing__plan">
-							<h2>Plano semestral</h2>
+							<h2>Plano quadrimestral</h2>
 							<p>1 hora/semana - 6x de R$ 118,10</p>
 							<p>2 horas/semana - 6x de R$ 236,20</p>
 						</div>
@@ -131,6 +170,12 @@
 						
 						<p class="pricing__coffee__title">O primeiro café para você conhecer o professor é gratuito.</p>
 						<a class="pricing__cta [ cta ] [ js-openModal ]" title="Marcar um café com o professor" href="!#">Marcar Café</a>
+
+						<?
+							if (isset($send)) {
+								echo "<p id='sucesso'>Suas informações foram enviadas com sucesso!</p>";
+							}
+						?>
 						
 					</div>
 					<!-- / .pricing__coffee -->
@@ -189,7 +234,7 @@
 					<div class="footer__about">
 						<h1>A Trybe</h1>
 
-						<p>Uma breve descrição da Trybe Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Construímos um novo conceito em aulas particulares de inglês. Utilizamos a personalização das aulas particulares junto ao nosso material didático, sempre atualizado e personalizado para cada aluno! Acreditamos que a experiência e interação são as chaves para um aprendizado efetivo. Para isso, promovemos o seu contato real com o inglês, com pessoas como você.</p>
 					</div>
 					<!-- / .footer__about -->
 
@@ -211,10 +256,16 @@
 								<a href="mailto:contact@trybe41.com">contact@trybe41.com</a>
 							</li>
 							<!-- / .footer__contact__item -->
+
+							<!-- .footer__contact__item -->
+							<li class="footer__contact__item">
+								<a href="tel:41984804141">(41) 9 8480-4141</a>
+							</li>
+							<!-- / .footer__contact__item -->
 							
 							<!-- .footer__contact__item -->
 							<li class="footer__contact__item">
-								<a title="Acesse o nosso facebook" href="#">
+								<a title="Acesse o nosso facebook" target="_blank" href="https://www.facebook.com/trybe41/">
 									<img src="../dist/images/icons/facebook.svg" alt="Facebook logo">
 								</a>
 							</li>
@@ -222,7 +273,7 @@
 
 							<!-- .footer__contact__item -->
 							<li class="footer__contact__item">
-								<a title="Acesse o nosso instagram" href="#">
+								<a title="Acesse o nosso instagram" target="_blank" href="instagram.com/trybe41">
 									<img src="../dist/images/icons/instagram.svg" alt="Instagram logo">
 								</a>
 							</li>
@@ -230,7 +281,7 @@
 
 							<!-- .footer__contact__item -->
 							<li class="footer__contact__item">
-								<a title="Acesse o nosso issuu" href="#">
+								<a title="Acesse o nosso issuu" target="_blank" href="issuu.com/trybe41">
 									<img src="../dist/images/icons/issuu.svg" alt="Issuu logo">
 								</a>
 							</li>
@@ -266,9 +317,9 @@
 						
 					<!-- .wrapper -->
 					<div class="wrapper">
-						<h2>Marcar café com Mateus Laino</h2>
-						<p>Antes de escolher um professor, você pode marcar um café com ele tendo a oportunidade de conhecer sua personalidade, alinhar suas expectativas e tirar dúvidas. Ou, se preferir, pode já marcar sua primeira aula ou um atendimento com um funcionário da Trybe.</p>
-						<p>Preencha o formulário abaixo e aguarde o contato do professor em até uma semana.</p>
+						<h2>Marcar café com Eyshila Röper</h2>
+						<p>Antes de escolher um professor, você pode marcar um café com ele tendo a oportunidade de conhecer sua personalidade, alinhar expectativas e tirar dúvidas. Ou, se preferir, pode já marcar sua primeira aula ou um atendimento com um Tryber (profissional exclusivo de atendimento ao aluno trybe).</p>
+						<p>Preencha o formulário abaixo e aguarde o nosso contato em até uma semana.</p>
 					</div>
 					<!-- / .wrapper -->
 
@@ -282,9 +333,9 @@
 					<div class="wrapper">
 						
 						<!-- .modal__form -->
-						<form action="../php/marcar-contato.php" method="POST" class="modal__form">
+						<form action="#sucesso" method="POST" class="modal__form">
 
-							<input type="hidden" name="professor" value="Mateus Laino">
+							<input type="hidden" name="professor" value="Eyshila Röper">
 							
 							<!-- .row -->
 							<div class="row">
@@ -366,11 +417,9 @@
 								
 								<!-- .field -->
 								<div class="field">
-									
 									<input type="submit" value="enviar" class="cta">
-
 								</div>
-								<!-- / .field -->
+                                <!-- / .field -->
 
 							</div>
 							<!-- / .row -->

@@ -38,13 +38,24 @@
         list-style: none;
         
         a {
-            font-size: rem(16px);
+            font-size: rem(14px);
             text-decoration: none;
             text-transform: uppercase;
             color: colors( white );
         } // a
 
     } // &__item
+
+    @include breakpoint( minimouse ) {
+
+        &__item {
+            a {
+                font-size: rem(16px);
+            } // a
+
+        } // &__item
+
+    }
 
 
     @include breakpoint( dog ) {

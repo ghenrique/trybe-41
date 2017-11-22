@@ -1,5 +1,6 @@
 <?php
 	if ($_POST) {
+		// Variables
 		$professor = $_POST['professor'];
 	    $tipo_contato = $_POST['marcar-contato'];
 	    $nome = $_POST['nome'];
@@ -7,22 +8,17 @@
 	    $telefone = $_POST['phone'];
 	    $data_preferencia = $_POST['date-time'];
 	    $local_preferencia = $_POST['place'];
-	    //====================================================
+		
+		
+		// Sender
+	    $email_remetente = "contact@trybe41.com";
 	    
-	    //REMETENTE --> ESTE EMAIL TEM QUE SER VALIDO DO DOMINIO
-	    //==================================================== 
-	    $email_remetente = "mateuslaino@trybe41.com"; // deve ser uma conta de email do seu dominio 
-	    //====================================================
-	    
-	    //Configurações do email, ajustar conforme necessidade
-	    //==================================================== 
-	    $email_destinatario = "ghenrique.s21@gmail.com"; // pode ser qualquer email que receberá as mensagens
+		// E-mail configs
+	    $email_destinatario = "trybeconect@gmail.com"; // Receiver
 	    $email_reply = "$email"; 
-	    $email_assunto = "Agendamento de $tipo_contato com o professor $professor"; // Este será o assunto da mensagem
-	    //====================================================
+	    $email_assunto = "Agendamento de $tipo_contato com o professor $professor";
 	    
-	    //Monta o Corpo da Mensagem
-	    //====================================================
+	    // Message Body
 	    $email_conteudo = "Tipo de contato: $tipo_contato \n"; 
 	    $email_conteudo .= "Nome: $nome \n";
 	    $email_conteudo .= "E-mail: $email \n";
@@ -30,15 +26,11 @@
 	    $email_conteudo .= "Data/horário de preferência: $data_preferencia \n";
 	    $email_conteudo .= "Local/bairro de preferência: $local_preferencia \n";
 	    
-	    //====================================================
-	    
-	    //Seta os Headers (Alterar somente caso necessario) 
-	    //==================================================== 
+	    // Setting Headers 
 	    $email_headers = implode ( "\n",array ( "From: $email_remetente", "Reply-To: $email_reply", "Return-Path: $email_remetente","MIME-Version: 1.0","X-Priority: 3","Content-Type: text/html; charset=UTF-8" ) );
-	    //====================================================
 	    
-	    //Enviando o email 
-	    //==================================================== 
+	    
+	    // Sending e-mail
 	    if (mail ($email_destinatario, $email_assunto, nl2br($email_conteudo), $email_headers)){ 
 			$send = true;
 	    }
@@ -166,7 +158,7 @@
 						</div>
 
 						<div class="pricing__plan">
-							<h2>Plano semestral</h2>
+							<h2>Plano quadrimestral</h2>
 							<p>1 hora/semana - 6x de R$ 118,10</p>
 							<p>2 horas/semana - 6x de R$ 236,20</p>
 						</div>
@@ -178,6 +170,12 @@
 						
 						<p class="pricing__coffee__title">O primeiro café para você conhecer o professor é gratuito.</p>
 						<a class="pricing__cta [ cta ] [ js-openModal ]" title="Marcar um café com o professor" href="!#">Marcar Café</a>
+
+						<?
+							if (isset($send)) {
+								echo "<p id='sucesso'>Suas informações foram enviadas com sucesso!</p>";
+							}
+						?>
 						
 					</div>
 					<!-- / .pricing__coffee -->
@@ -236,7 +234,7 @@
 					<div class="footer__about">
 						<h1>A Trybe</h1>
 
-						<p>Uma breve descrição da Trybe Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p>Construímos um novo conceito em aulas particulares de inglês. Utilizamos a personalização das aulas particulares junto ao nosso material didático, sempre atualizado e personalizado para cada aluno! Acreditamos que a experiência e interação são as chaves para um aprendizado efetivo. Para isso, promovemos o seu contato real com o inglês, com pessoas como você.</p>
 					</div>
 					<!-- / .footer__about -->
 
@@ -258,10 +256,16 @@
 								<a href="mailto:contact@trybe41.com">contact@trybe41.com</a>
 							</li>
 							<!-- / .footer__contact__item -->
+
+							<!-- .footer__contact__item -->
+							<li class="footer__contact__item">
+								<a href="tel:41984804141">(41) 9 8480-4141</a>
+							</li>
+							<!-- / .footer__contact__item -->
 							
 							<!-- .footer__contact__item -->
 							<li class="footer__contact__item">
-								<a title="Acesse o nosso facebook" href="#">
+								<a title="Acesse o nosso facebook" target="_blank" href="https://www.facebook.com/trybe41/">
 									<img src="../dist/images/icons/facebook.svg" alt="Facebook logo">
 								</a>
 							</li>
@@ -269,7 +273,7 @@
 
 							<!-- .footer__contact__item -->
 							<li class="footer__contact__item">
-								<a title="Acesse o nosso instagram" href="#">
+								<a title="Acesse o nosso instagram" target="_blank" href="instagram.com/trybe41">
 									<img src="../dist/images/icons/instagram.svg" alt="Instagram logo">
 								</a>
 							</li>
@@ -277,7 +281,7 @@
 
 							<!-- .footer__contact__item -->
 							<li class="footer__contact__item">
-								<a title="Acesse o nosso issuu" href="#">
+								<a title="Acesse o nosso issuu" target="_blank" href="issuu.com/trybe41">
 									<img src="../dist/images/icons/issuu.svg" alt="Issuu logo">
 								</a>
 							</li>
@@ -314,8 +318,8 @@
 					<!-- .wrapper -->
 					<div class="wrapper">
 						<h2>Marcar café com Lucas Camargo</h2>
-						<p>Antes de escolher um professor, você pode marcar um café com ele tendo a oportunidade de conhecer sua personalidade, alinhar suas expectativas e tirar dúvidas. Ou, se preferir, pode já marcar sua primeira aula ou um atendimento com um funcionário da Trybe.</p>
-						<p>Preencha o formulário abaixo e aguarde o contato do professor em até uma semana.</p>
+						<p>Antes de escolher um professor, você pode marcar um café com ele tendo a oportunidade de conhecer sua personalidade, alinhar expectativas e tirar dúvidas. Ou, se preferir, pode já marcar sua primeira aula ou um atendimento com um Tryber (profissional exclusivo de atendimento ao aluno trybe).</p>
+						<p>Preencha o formulário abaixo e aguarde o nosso contato em até uma semana.</p>
 					</div>
 					<!-- / .wrapper -->
 
@@ -418,12 +422,6 @@
 
 								</div>
 								<!-- / .field -->
-
-								<?
-									if (isset($send)) {
-										echo "<p id='sucesso'>E-mail enviado com sucesso!</p>";
-									}
-								?>
 
 							</div>
 							<!-- / .row -->

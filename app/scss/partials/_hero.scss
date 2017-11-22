@@ -12,6 +12,7 @@
         text-align: center;
         
         transform: translateY( -50%);
+
     } // &__content
 
     &__image {
@@ -71,9 +72,10 @@
     @include breakpoint( dog ) {
 
         &__image {
-        
+
             img {
                 width:      100%;
+                height:     auto;
                 min-height: 100%;
             } // img
 
@@ -81,6 +83,10 @@
 
         &__content {
             left: 20px;
+
+            &--success-form {
+                left: auto;
+            } // &--success-form
         } // &__content
         
         &__title {
@@ -105,9 +111,13 @@
         } // &__image
 
         &__content {
-            left: 20px;
             max-width: 450px;
             text-align: left;
+
+            &--success-form {
+                max-width: none;
+                text-align: center;
+            }
         } // &__content
 
         &__title {
@@ -122,10 +132,6 @@
 
     @include breakpoint( elephant ) {
         height: 768px;
-
-        &__content {
-            left: 20px;
-        } // &__content
     } // @include breakpoint( elephant )
 
 } // .hero

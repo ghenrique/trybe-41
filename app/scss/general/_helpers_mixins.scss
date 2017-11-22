@@ -50,6 +50,10 @@
 
 // BREAKPOINTS - usE : @include breakpoint( mouse ) { parameters: values; }
 @mixin breakpoint( $breakpoint ) {
+    @if $breakpoint == minimouse {
+        @media only screen and (min-width: em(375)) { @content; }
+    }
+
     @if $breakpoint == mouse {
         @media only screen and (min-width: em(480)) { @content; }
     }
