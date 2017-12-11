@@ -14,7 +14,7 @@
 	    $email_remetente = "contact@trybe41.com";
 	    
 		// E-mail configs
-	    $email_destinatario = "trybeconect@gmail.com"; // Receiver
+	    $email_destinatario = "trybe41site@gmail.com"; // Receiver
 	    $email_reply = "$email"; 
 	    $email_assunto = "Agendamento de $tipo_contato com o professor $professor";
 	    
@@ -153,14 +153,14 @@
 
 						<div class="pricing__plan">
 							<h2>Plano mensal</h2>
-							<p>1 hora/semana - R$ 160,00</p>
-							<p>2 horas/semana - R$ 320,00</p>
+							<p>1 hora/semana - R$ 172,00</p>
+							<p>2 horas/semana - R$ 344,00</p>
 						</div>
 
 						<div class="pricing__plan">
 							<h2>Plano quadrimestral</h2>
-							<p>1 hora/semana - 6x de R$ 118,10</p>
-							<p>2 horas/semana - 6x de R$ 236,20</p>
+							<p>1 hora/semana - 6x de R$ 136,84</p>
+							<p>2 horas/semana - 6x de R$ 273,68</p>
 						</div>
 					</div>
 					<!-- / .pricing__values -->

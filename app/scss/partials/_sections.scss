@@ -1,3 +1,27 @@
+.coming-soon {
+    position: relative;
+    width:  100%;
+    height: 100%;
+    background: url('../images/section-content-bg.jpg') center no-repeat;
+    background-size: cover;
+
+    &__content {
+        position: absolute;
+        top:  50%;
+        right: 10%;
+        color: white;
+
+        font-size: rem(30px);
+        text-align: center;
+
+        transform: translateY(-50%);
+
+        h1 {
+            margin-top: 30px;
+        }
+    }
+}
+
 // Section About
 .about {
     margin-bottom: 15px;
@@ -335,6 +359,7 @@
 
 #sucesso {
     margin-top: 20px;
+    font-size: rem(18px);
     color: green;
 }
 
