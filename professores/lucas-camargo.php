@@ -114,7 +114,7 @@
 				<!-- .hero__image -->
 				<figure class="hero__image">
 					
-					<img src="../dist/images/teachers/mateus-laino.jpg" alt="Conheça nossos professores">
+					<img src="../dist/images/teachers/lucas-camargo.jpg" alt="Conheça nossos professores">
 
 					<span class="hero__more-content"></span>
 
@@ -132,7 +132,7 @@
 					
 					<p class="about__description">
 						<span>Lucas Camargo, Curitiba</span>
-						 Estudou em escolas de línguas no Brasil, contudo morou nos EUA durante por um ano em seu Ensino Médio. Possui o ECCE certificate (certificado de proficiência linguística) administrado pela University of Michigan. Estuda relações internacionais.
+						Estudou em escolas de línguas no Brasil, contudo morou nos EUA durante por um ano em seu Ensino Médio. Possui o ECCE certificate (certificado de proficiência linguística) administrado pela University of Michigan. Estuda relações internacionais.
 					</p>
 
 				</div>
@@ -149,18 +149,18 @@
 					
 					<!-- .pricing__values -->
 					<div class="pricing__item pricing__values">
-						<p class="pricing__class-hour">R$ 50,45 hora/aula</p>
+						<p class="pricing__class-hour">R$ 47,00 hora/aula</p>
 
 						<div class="pricing__plan">
 							<h2>Plano mensal</h2>
-							<p>1 hora/semana - R$ 201,80</p>
-							<p>2 horas/semana - R$ 403,60</p>
+							<p>1 hora/semana - R$ 188,00</p>
+							<p>2 horas/semana - R$ 376,00</p>
 						</div>
 
 						<div class="pricing__plan">
 							<h2>Plano quadrimestral</h2>
-							<p>1 hora/semana - 6x de R$ 150,67</p>
-							<p>2 horas/semana - 6x de R$ 301,35</p>
+							<p>1 hora/semana - 6x de R$ 149,57</p>
+							<p>2 horas/semana - 6x de R$ 299,13</p>
 						</div>
 					</div>
 					<!-- / .pricing__values -->
