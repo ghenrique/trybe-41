@@ -132,7 +132,7 @@
 					
 					<p class="about__description">
 						<span>Lucas Camargo, Curitiba</span>
-						Estudou em escolas de línguas no Brasil, contudo morou nos EUA durante por um ano em seu Ensino Médio. Possui o ECCE certificate (certificado de proficiência linguística) administrado pela University of Michigan. Estuda relações internacionais.
+						Mochileiro, graduado em Relações Internacionais. Possui vivência internacional, e morou nos EUA e viajou por meses pela Europa. Além de ter ampla experiência em ensino, é certificado em língua inglesa pela University of Michigan.
 					</p>
 
 				</div>
